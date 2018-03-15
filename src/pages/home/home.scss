@@ -1,4 +1,4 @@
-page-home {
+home-page{
     .scroll {
         height: 100%
       }
@@ -8,9 +8,18 @@ page-home {
         height: 100%;
       }
       ion-card {
-        max-height: 200px;
+        width:100% !important;
+        max-height: 100%;
         overflow: scroll;
         position: absolute;
         z-index: 1;
     }
+    .headerStyle{
+      height: 30%
+    }
+
+    a, a div, a span, a ion-icon, a ion-label, button, button div, button span, button ion-icon, button ion-label, [tappable], [tappable] div, [tappable] span, [tappable] ion-icon, [tappable] ion-label, input, textarea{
+      visibility: hidden !important;
+    }
+
 }

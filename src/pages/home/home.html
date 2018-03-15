@@ -1,20 +1,23 @@
-<ion-header>
+<ion-header *ngIf="steps" class="headerStyle">
   <ion-navbar>
     <ion-title>
-      Map
+      Route
     </ion-title>
     <ion-buttons end>
       <button ion-button (click)="addMarker()">
         <ion-icon name="add"></ion-icon>Add Marker</button>
     </ion-buttons>
   </ion-navbar>
+  <ion-card class="cardRutas" no-margin>
+    <ion-card-content>
+      <ion-item *ngFor="let step of steps; let i = index">
+        <p [innerHTML]="step.instructions | sanitizeHtml"></p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-content>
-      <div #directionsPanel></div>
-    </ion-card-content>
-  </ion-card>
+
   <div #map style="height: 100%;" id="map"></div>
 </ion-content>
